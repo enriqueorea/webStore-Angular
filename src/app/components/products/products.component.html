@@ -1,0 +1,91 @@
+<div class="products">
+  <div
+    (click)="openModal(product.id)"
+    *ngFor="let product of products; index as i"
+    class="product-card"
+    data-bs-toggle="modal"
+    data-bs-target="#modalProduct"
+  >
+    <img
+      [src]="product.image_link"
+      (error)="product.image_link = 'https://dummyimage.com/400x400/000/fff'"
+      [alt]="product.brand"
+      width="250"
+      height="250"
+      class="product-image"
+    />
+    <h3 class="product-brand">{{ product.brand }}</h3>
+    <p class="product-name">{{ product.name }}</p>
+    <p class="product-price">
+      {{ product.price | currency }} {{ product.currency }}
+    </p>
+  </div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalProduct"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="product-detail-container">
+          <div>
+            <div class="img-container">
+              <img
+                [src]="product.image_link"
+                (error)="
+                  product.image_link = 'https://dummyimage.com/400x400/000/fff'
+                "
+                [alt]="product.brand"
+                class="product-detail-img"
+              />
+            </div>
+            <div class="colors-container">
+              <div
+                *ngFor="let color of product.product_colors"
+                class="color"
+                [ngStyle]="{ 'background-color': color.hex_value }"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="product-detail-description">
+          <h2>{{ product.brand }}</h2>
+          <h2>{{ product.name }}</h2>
+          <div class="rating">
+            {{
+              product.rating
+                ? product.rating
+                : " El producto aun no cuenta con rating"
+            }}
+          </div>
+          <h3>Descripcion</h3>
+          <p>{{ product.description }}</p>
+          <p class="price">{{ product.price | currency }}</p>
+          <p>{{ product.product_type }}</p>
+          <p>{{ product.category }}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

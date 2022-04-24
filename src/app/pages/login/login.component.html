@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="login">
+  <div class="login-form">
+    <h2 class="">Login</h2>
+    <div class="form">
+      <form (ngSubmit)="signIn()" #myForm="ngForm">
+        <div class="input">
+          <label for="userName">Nombre de usuario: </label>
+          <input
+            name="userName"
+            id="userName"
+            type="text"
+            [(ngModel)]="userName"
+            required
+            placeholder="nombre de usuario..."
+          />
+        </div>
+        <div class="input">
+          <label for="userName">Contrasena: </label>
+          <input
+            name="password"
+            id="userName"
+            type="password"
+            [(ngModel)]="password"
+            required
+            placeholder="contrasena..."
+          />
+        </div>
+        <button [disabled]="myForm.invalid" type="submit" class="btn-sign">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

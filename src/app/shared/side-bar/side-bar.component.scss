@@ -1,0 +1,15 @@
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  section {
+    margin: 1rem;
+  }
+}
+.dropdown-item {
+  cursor: pointer;
+}

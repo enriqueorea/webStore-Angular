@@ -1,0 +1,74 @@
+<aside>
+  <section class="category">
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Categoria
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li
+          (click)="sendTerm(cat, 'category')"
+          class="dropdown-item"
+          *ngFor="let cat of category"
+        >
+          {{ cat }}
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="brands">
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Marcas
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li
+          (click)="sendTerm(brand, 'brand')"
+          class="dropdown-item"
+          *ngFor="let brand of brands"
+        >
+          {{ brand }}
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="tipos">
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Tipos de productos
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li
+          (click)="sendTerm(type, 'product_type')"
+          class="dropdown-item"
+          *ngFor="let type of productType"
+        >
+          {{ type }}
+        </li>
+      </ul>
+    </div>
+  </section>
+</aside>

@@ -1,0 +1,17 @@
+.home {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+  &-sidebar {
+    flex-grow: 0.5;
+  }
+
+  &-products {
+    flex-grow: 2;
+  }
+}

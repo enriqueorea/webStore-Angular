@@ -1,0 +1,15 @@
+<header>
+  <section class="brand">
+    <h1>webStore</h1>
+  </section>
+  <section *ngIf="isActive" class="user">
+    <div class="user">
+      <div class="user-info">
+        <p>Usuario: {{ user.userName }}</p>
+        <p>Autenticado</p>
+      </div>
+      <div class="user-img"></div>
+    </div>
+    <button (click)="logOut()" class="btn-logut">Salir</button>
+  </section>
+</header>
